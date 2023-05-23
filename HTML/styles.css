@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-white: #fff;
+    --color-pink: #d1227a;
+    --color-black: #0c0c0c;
+    --color-purple: #5f01ac;
+    --color-blue: #073fcc;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* usamos # para chamar nosso id, dessa forma noso arquivo vai 
+ entender que estamos estilizando todo o conteúdo dentro do person*/
+#person {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: red;
+}
+
+.person-content {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background-color: var(--color-black);
+}
+
+.person-content div h1 {
+    color: transparent;
+
+    padding: 0px 4px;
+    position: relative;
+
+    font-size: 4.5rem;
+    line-height: 6rem;
+
+    animation: written_text 0.5s ease forwards;
+}
+
+.person-content div h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.person-content div h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.person-content div h1:nth-child(3) {
+    animation: written_text_name 0.5s ease forwards;
+    animation-delay: 3s;
+}
+
+.person-content div h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: 100%;
+    background-color: var(--color-pink);
+}
+
+@keyframes written_text {
+    100% {
+        color: var(--color-white);
+    }
+}
+@keyframes written_text_name {
+    100% {
+        color: var(--color-blue);
+    }
+}
+@keyframes written_text_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
